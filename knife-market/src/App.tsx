@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <div>Hello Vite</div>
+      <div>Hello Vite!</div>
     </>
   );
 }
