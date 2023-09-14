@@ -1,0 +1,10 @@
+services:
+  frontend:
+    build: .
+    container_name: frontend
+    volumes:
+      - './knife-market:/knife-market'
+    ports:
+      - 5173:5173
+    stdin_open: true
+    command: bash -c "npm install && npm run dev"
