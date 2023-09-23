@@ -5,6 +5,7 @@ services:
     volumes:
       - './src:/knife-market/src'
       - './index.html:/knife-market/index.html'
+      - './package.json:/knife-market/package.json'
       - './vite.config.ts:/knife-market/vite.config.ts'
     ports:
       - 5173:5173
