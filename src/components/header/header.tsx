@@ -1,6 +1,16 @@
-import { AppBar, Link, Toolbar, Typography } from '@mui/material';
+import { Person } from '@mui/icons-material';
+import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
+import { useState } from 'react';
+import StyledTabs from '../tabs/styled-tabs';
+import StyledTab from '../tabs/styled-tab';
 
 function Header() {
+  const [value, setValue] = useState('О нас');
+
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
+
   return (
     // компонент <AppBar /> под капотом преобразуется в <header></header>
     <AppBar sx={{ background: '#141414' }}>
@@ -9,77 +19,56 @@ function Header() {
           width: '1580px',
           m: '0 auto',
           display: 'flex',
-          //TODO: исправить отсутпы, сделать в соответствии с макетом
-          justifyContent: 'space-around',
         }}
       >
-        <Typography>
-          <Link
-            href="#"
-            underline="none"
+        <StyledTabs
+          value={value}
+          onChange={handleChange}
+          sx={{ boxSizing: 'border-box', flexGrow: 0.94 }}
+          // TODO: доделать адаптивность, чтобы при увеличении размеров личный кабинет отображался корректно
+        >
+          <StyledTab
+            label="О нас"
             sx={{
               color: '#FFFFFF',
               fontWeight: '500',
               fontSize: '16px',
-              //TODO: исправить отсутпы, сделать в соответствии с макетом
+
               mr: '20px',
             }}
-          >
-            О нас
-          </Link>
-        </Typography>
-        <Typography>
-          <Link
-            href="#"
-            underline="none"
+          />
+          <StyledTab
+            label="Оплата и доставка"
+            sx={{
+              color: '#FFFFFF',
+              fontWeight: '500',
+              fontSize: '16px',
+              mr: '20px',
+            }}
+          />
+          <StyledTab
+            label="Новости"
+            sx={{
+              color: '#FFFFFF',
+              fontWeight: '500',
+              fontSize: '16px',
+              mr: '20px',
+            }}
+          />
+          <StyledTab
+            label="Контакты"
             sx={{
               color: '#FFFFFF',
               fontWeight: '500',
               fontSize: '16px',
             }}
-          >
-            Оплата и доставка
-          </Link>
-        </Typography>
-        <Typography>
-          <Link
-            href="#"
-            underline="none"
-            sx={{
-              color: '#FFFFFF',
-              fontWeight: '500',
-              fontSize: '16px',
-            }}
-          >
-            Новости
-          </Link>
-        </Typography>
-        <Typography>
-          <Link
-            href="#"
-            underline="none"
-            sx={{
-              color: '#FFFFFF',
-              fontWeight: '500',
-              fontSize: '16px',
-            }}
-          >
-            Контакты
-          </Link>
-        </Typography>
-        <Typography>
-          <Link
-            href="#"
-            underline="none"
-            sx={{
-              color: '#FFFFFF',
-              fontWeight: '500',
-              fontSize: '16px',
-            }}
-          >
-            Личный кабинет
-          </Link>
-        </Typography>
+          />
+        </StyledTabs>
+
+        <IconButton sx={{ color: '#FFFFFF' }}>
+          <Person />
+        </IconButton>
+        <Typography>Личный кабинет</Typography>
       </Toolbar>
     </AppBar>
   );
