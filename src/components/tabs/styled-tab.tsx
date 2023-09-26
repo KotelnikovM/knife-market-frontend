@@ -11,15 +11,20 @@ const StyledTab = styled((props: StyledTabProps) => (
   fontWeight: theme.typography.fontWeightRegular,
   fontSize: theme.typography.pxToRem(15),
   marginRight: theme.spacing(1),
+  outline: 0,
 
   color: '#E8AA31',
   '&.Mui-selected': {
     color: '#E8AA31',
     border: 0,
+    outline: 0,
   },
   '&.Mui-focusVisible': {
     color: '#E8AA31',
     border: 0,
+  },
+  ':active': {
+    outline: 0,
   },
 }));
 
