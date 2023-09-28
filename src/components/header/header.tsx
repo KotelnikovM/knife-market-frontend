@@ -5,11 +5,11 @@ import IdenticSearchBar from './identic-search-bar/identic-search-bar';
 function Header() {
   return (
     // компонент <AppBar /> под капотом преобразуется в <header></header>
-    <AppBar>
-      {/* TODO: Сделать контейнер для хедера */}
 
+    <AppBar>
       <AppNavBar />
       <IdenticSearchBar />
+      {/* TODO: Сделать контейнер для хедера */}
     </AppBar>
   );
 }
