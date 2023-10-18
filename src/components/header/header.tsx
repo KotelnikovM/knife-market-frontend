@@ -1,6 +1,7 @@
 import { AppBar } from '@mui/material';
 import AppNavBar from './app-nav-bar/app-nav-bar';
 import IdenticSearchBar from './identic-search-bar/identic-search-bar';
+import MainTabs from './main-tabs/main-tabs';
 
 function Header() {
   return (
@@ -9,6 +10,8 @@ function Header() {
     <AppBar>
       <AppNavBar />
       <IdenticSearchBar />
+      <MainTabs />
+
       {/* TODO: Сделать контейнер для хедера */}
     </AppBar>
   );

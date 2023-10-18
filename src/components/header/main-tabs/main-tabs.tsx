@@ -1,11 +1,10 @@
-import { Container, IconButton, Toolbar, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import StyledTabs from '../../tabs/styled-tabs';
 import StyledTab from '../../tabs/styled-tab';
-import { Person } from '@mui/icons-material';
+import { Container, Toolbar } from '@mui/material';
 
-function AppNavBar(): JSX.Element {
-  const [value, setValue] = useState<string>('О нас');
+function MainTabs() {
+  const [value, setValue] = useState('Каталог ножей');
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -19,41 +18,53 @@ function AppNavBar(): JSX.Element {
         background: '#141414',
       }}
     >
-      <Container component="div" maxWidth="xl" sx={{ display: 'flex' }}>
+      {/* TODO: разобраться как сделать равномерные отступы между табами */}
+      <Container component="div" maxWidth="xl">
         <StyledTabs
           value={value}
           onChange={handleChange}
-          sx={{ boxSizing: 'border-box', width: '100%' }}
+          sx={{
+            boxSizing: 'border-box',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
         >
           <StyledTab
-            label="О нас"
+            label="Каталог ножей"
+            sx={{
+              color: '#FFFFFF',
+              display: 'block',
+              fontWeight: '500',
+              fontSize: '16px',
+            }}
+          />
+          <StyledTab
+            label="Клинковое оружие"
             sx={{
               color: '#FFFFFF',
               fontWeight: '500',
               fontSize: '16px',
-              mr: '20px',
             }}
           />
           <StyledTab
-            label="Оплата и доставка"
+            label="Сувенирные изделия"
             sx={{
               color: '#FFFFFF',
               fontWeight: '500',
               fontSize: '16px',
-              mr: '20px',
             }}
           />
           <StyledTab
-            label="Новости"
+            label="Фонари ARMYTEK"
             sx={{
               color: '#FFFFFF',
               fontWeight: '500',
               fontSize: '16px',
-              mr: '20px',
             }}
           />
           <StyledTab
-            label="Контакты"
+            label="Сопуствующие товары"
             sx={{
               color: '#FFFFFF',
               fontWeight: '500',
@@ -61,14 +72,9 @@ function AppNavBar(): JSX.Element {
             }}
           />
         </StyledTabs>
-
-        <IconButton sx={{ color: '#FFFFFF' }}>
-          <Person />
-          <Typography>Личный кабинет</Typography>
-        </IconButton>
       </Container>
     </Toolbar>
   );
 }
 
-export default AppNavBar;
+export default MainTabs;

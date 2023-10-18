@@ -8,6 +8,7 @@ interface StyledTabsProps {
 
 const StyledTabs = styled((props: StyledTabsProps) => (
   <Tabs
+    component="ul"
     {...props}
     TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
   />
