@@ -1,8 +1,9 @@
 // import { useEffect } from 'react';
 import './App.css';
-import { Counter } from './Counter';
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
+import { Counter } from '../Counter';
+// import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
+import { Header } from 'widgets/header';
 
 function App() {
   // const getData = async () => {

@@ -19,7 +19,16 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "src/",
+    "paths": {
+      "widgets/*": ["widgets/*"],
+      "entities/*": ["entities/*"],
+      "pages/*": ["pages/*"],
+      "features/*": ["features/*"],
+      "shared/*": ["shared/*"],
+      "app/*": ["app/*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

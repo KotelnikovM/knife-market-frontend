@@ -1,8 +1,8 @@
 import { FavoriteBorderOutlined, Place } from '@mui/icons-material';
 import { Box, Container, Input, Toolbar, Typography } from '@mui/material';
-import Basket from './basket/basket';
+import { Basket } from 'shared/basket/ui';
 
-function IdenticSearchBar() {
+export const MiddleLogoAndContacts = () => {
   return (
     <Toolbar sx={{ backgroundColor: '#ECF1F2', color: '#000000' }}>
       <Container
@@ -79,6 +79,4 @@ function IdenticSearchBar() {
       </Container>
     </Toolbar>
   );
-}
-
-export default IdenticSearchBar;
+};
