@@ -2,6 +2,9 @@ import { Tab, styled } from '@mui/material';
 
 interface StyledTabProps {
   label: string;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  onClick?: (event: React.SyntheticEvent) => void;
 }
 
 const StyledTab = styled((props: StyledTabProps) => (
